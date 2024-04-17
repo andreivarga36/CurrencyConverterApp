@@ -1,4 +1,4 @@
-namespace CurrencyAppConverterFacts
+namespace CurrencyConverterAppFacts.Classes
 {
     public class UnitTest1
     {
