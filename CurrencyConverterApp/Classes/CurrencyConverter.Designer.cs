@@ -1,6 +1,6 @@
 ﻿namespace CurrencyAppConverter
 {
-    partial class Form1
+    partial class CurrencyConverter
     {
         /// <summary>
         /// Required designer variable.
