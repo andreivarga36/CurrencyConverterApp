@@ -10,12 +10,12 @@ namespace CurrencyConverterAppFacts.Classes
         private ApiService apiService = new();
 
         [Fact]
-        public void GetCurrencies_ValidJsonResponse_ShouldReturnTrue()
+        public void DeserializeCurrencies_ValidJsonResponse_ShouldReturnTrue()
         {
             string response = "{\r\n        \"meta\":{\r\n            \"last_updated_at\":\"2023-08-03T23:59:59Z\"\r\n        },\r\n        \"data\":{\r\n            \"BIF\": {\r\n                \"code\": \"BIF\",\r\n                \"value\": 2825.50500246\r\n            },} } ";
             var apiService = new ApiService();
 
-            Dictionary<string, double> currencies = apiService.GetCurrencies(response);
+            Dictionary<string, double> currencies = apiService.DeserializeCurrencies(response);
 
             Assert.True(currencies.ContainsKey("BIF"));
             Assert.True(currencies.TryGetValue("BIF", out _));
@@ -23,34 +23,34 @@ namespace CurrencyConverterAppFacts.Classes
         }
 
         [Fact]
-        public void GetCurrencies_InvalidJsonResponse_ShouldThrowArgumentException()
+        public void DeserializeCurrencies_InvalidJsonResponse_ShouldThrowArgumentException()
         {
             string jsonResponse = " \"code\": \"BIF} ";
             var apiService = new ApiService();
 
-            Assert.Throws<ArgumentException>(() => apiService.GetCurrencies(jsonResponse));
+            Assert.Throws<ArgumentException>(() => apiService.DeserializeCurrencies(jsonResponse));
         }
 
         [Fact]
-        public void GetCurrencies_EmptyJsonResponse_ShouldThrowArgumentException()
+        public void DeserializeCurrencies_EmptyJsonResponse_ShouldThrowArgumentException()
         {
             string jsonResponse = "";
             var apiService = new ApiService();
 
-            Assert.Throws<ArgumentException>(() => apiService.GetCurrencies(jsonResponse));
+            Assert.Throws<ArgumentException>(() => apiService.DeserializeCurrencies(jsonResponse));
         }
 
         [Fact]
-        public void GetCurrencies_NullJsonResponse_ShouldThrowArgumentException()
+        public void DeserializeCurrencies_NullJsonResponse_ShouldThrowArgumentException()
         {
             string? jsonResponse = null;
             var apiService = new ApiService();
 
-            Assert.Throws<ArgumentException>(() => apiService.GetCurrencies(jsonResponse));
+            Assert.Throws<ArgumentException>(() => apiService.DeserializeCurrencies(jsonResponse));
         }
 
         [Fact]
-        public async void RetrieveCurrenciesAsync_ApiKeyIsValid_ShouldReturnExpectedResult()
+        public async void GetCurrenciesDataAsync_ApiKeyIsValid_ShouldReturnExpectedResult()
         {
             string apiKey = "validApiKey";
 
@@ -66,7 +66,7 @@ namespace CurrencyConverterAppFacts.Classes
             var httpClient = new HttpClient(mockHttpHandler.Object);
             apiService = new ApiService(httpClient);
 
-            string currencies = await apiService.RetrieveCurrenciesAsync(apiKey);
+            string currencies = await apiService.GetCurrenciesDataAsync(apiKey);
 
             Assert.Contains("EUR", currencies);
             Assert.Contains("USD", currencies);
@@ -74,7 +74,7 @@ namespace CurrencyConverterAppFacts.Classes
         }
 
         [Fact]
-        public async Task RetrieveCurrenciesAsync_ApiKeyIsInvalid_ShouldReturnExpectedResult()
+        public async Task GetCurrenciesDataAsync_ApiKeyIsInvalid_ShouldReturnExpectedResult()
         {
             string apiKey = "fakeApiKey";
 
@@ -90,11 +90,11 @@ namespace CurrencyConverterAppFacts.Classes
             apiService = new ApiService(httpClient);
 
 
-            await Assert.ThrowsAsync<HttpRequestException>(() => apiService.RetrieveCurrenciesAsync(apiKey));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
 
         [Fact]
-        public async Task RetrieveCurrenciesAsync_InternalServerError_ShouldReturnExpectedResult()
+        public async Task GetCurrenciesDataAsync_InternalServerError_ShouldReturnExpectedResult()
         {
             string apiKey = "validApiKey";
 
@@ -110,11 +110,11 @@ namespace CurrencyConverterAppFacts.Classes
             apiService = new ApiService(httpClient);
 
 
-            await Assert.ThrowsAsync<HttpRequestException>(() => apiService.RetrieveCurrenciesAsync(apiKey));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
 
         [Fact]
-        public async Task RetrieveCurrenciesAsync_NetworkUnavailable_ShouldThrowException()
+        public async Task GetCurrenciesDataAsync_NetworkUnavailable_ShouldThrowException()
         {
             string apiKey = "validApiKey";
 
@@ -126,11 +126,11 @@ namespace CurrencyConverterAppFacts.Classes
             var httpClient = new HttpClient(mockHttpHandler.Object);
             apiService = new ApiService(httpClient);
 
-            await Assert.ThrowsAsync<HttpRequestException>(() => apiService.RetrieveCurrenciesAsync(apiKey));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
 
         [Fact]
-        public async Task RetrieveCurrenciesAsync_UnexpectedJsonResponse_ShouldReturnExpectedResult()
+        public async Task GetCurrenciesDataAsync_UnexpectedJsonResponse_ShouldReturnExpectedResult()
         {
             string apiKey = "validApiKey";
             string expectedResponse = "{\"currencies\": EUR, CHF, USD }";
@@ -147,14 +147,14 @@ namespace CurrencyConverterAppFacts.Classes
             var httpClient = new HttpClient(mockHttpHandler.Object);
             var apiService = new ApiService(httpClient);
 
-            string currencies = await apiService.RetrieveCurrenciesAsync(apiKey);
+            string currencies = await apiService.GetCurrenciesDataAsync(apiKey);
 
             Assert.NotEqual(currencies, expectedResponse);
             Assert.Contains("\"invalid_field\": 20", currencies);
         }
 
         [Fact]
-        public async Task RetrieveCurrenciesAsync_JsonResponseIsNull_ShouldThrowException()
+        public async Task GetCurrenciesDataAsync_JsonResponseIsNull_ShouldThrowException()
         {
             string apiKey = "validApiKey";
 
@@ -166,11 +166,11 @@ namespace CurrencyConverterAppFacts.Classes
             var httpClient = new HttpClient(mockHttpHandler.Object);
             var apiService = new ApiService(httpClient);
 
-            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.RetrieveCurrenciesAsync(apiKey));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
 
         [Fact]
-        public async Task RetrieveWeatherInformationAsync_RequestLimitExceeded_ShouldThrowException()
+        public async Task GetCurrenciesDataAsync_RequestLimitExceeded_ShouldThrowException()
         {
             string apiKey = "validApiKey";
 
@@ -185,7 +185,7 @@ namespace CurrencyConverterAppFacts.Classes
             var httpClient = new HttpClient(mockHttpHandler.Object);
             apiService = new ApiService(httpClient);
 
-            await Assert.ThrowsAsync<HttpRequestException>(() => apiService.RetrieveCurrenciesAsync(apiKey));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
     }
 }

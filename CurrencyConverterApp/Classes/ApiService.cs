@@ -34,7 +34,7 @@ namespace CurrencyAppConverter.Classes
             }
         }
 
-        public Dictionary<string, double> GetCurrencies(string response)
+        public Dictionary<string, double> DeserializeCurrencies(string response)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace CurrencyAppConverter.Classes
             }
         }
 
-        public async Task<string> RetrieveCurrenciesAsync(string apiKey)
+        public async Task<string> GetCurrenciesDataAsync(string apiKey)
         {
             try
             {
@@ -59,7 +59,8 @@ namespace CurrencyAppConverter.Classes
             }
             catch (HttpRequestException ex)
             {
-                throw new HttpRequestException(ex.Message);
+                string errorMessage = "Failed to retrieve currencies, please try again later!";
+                throw new InvalidOperationException(errorMessage, ex);
             }
         }
 

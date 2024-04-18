@@ -5,9 +5,9 @@ namespace CurrencyAppConverter.Interfaces
 {
     public interface IApiService
     {
-        Task<string> RetrieveCurrenciesAsync(string apiKey);
+        Task<string> GetCurrenciesDataAsync(string apiKey);
 
-        Dictionary<string, double> GetCurrencies(string response);
+        Dictionary<string, double> DeserializeCurrencies(string response);
 
         void DisposeClient();
     }
