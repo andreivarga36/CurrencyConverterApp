@@ -51,7 +51,7 @@ namespace CurrencyAppConverter.Classes
             }
         }
 
-        public async Task<string> RetrieveCurrencies(string apiKey)
+        public async Task<string> RetrieveCurrenciesAsync(string apiKey)
         {
             try
             {
