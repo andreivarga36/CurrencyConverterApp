@@ -57,6 +57,39 @@ namespace CurrencyConverterApp
                 currenciesPopulated = true;
             }
         }
+
+        private bool ValidateUserInput() => ValidateSourceCurrency() && ValidateDestinationCurrency() && ValidateAmount();
+
+
+        private bool ValidateSourceCurrency()
+        {
+            if (currencies.ContainsKey(sourceCurrencyComboBox.Text))
+            {
+                return true;
+            }
+
+            throw new InvalidOperationException("Please type a valid currency in \"From\" box!");
+        }
+
+        private bool ValidateDestinationCurrency()
+        {
+            if (currencies.ContainsKey(destinationCurrencyComboBox.Text))
+            {
+                return true;
+            }
+
+            throw new InvalidOperationException("Please type a valid currency in \"To\" box!");
+        }
+
+        private bool ValidateAmount()
+        {
+            if (double.TryParse(amountTextBox.Text, out _))
+            {
+                return true;
+            }
+
+            throw new InvalidOperationException("Please enter a valid amount!");
+        }
     }
 }
 
