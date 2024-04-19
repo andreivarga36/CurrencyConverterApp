@@ -1,4 +1,4 @@
-﻿namespace CurrencyAppConverter
+﻿namespace CurrencyConverterApp
 {
     partial class CurrencyConverter
     {
@@ -29,51 +29,51 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CurrencyConverter));
-            this.sourceCurrency = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labFrom = new System.Windows.Forms.Label();
+            this.labTo = new System.Windows.Forms.Label();
+            this.labAmount = new System.Windows.Forms.Label();
             this.sourceCurrencyComboBox = new System.Windows.Forms.ComboBox();
             this.destinationCurrencyComboBox = new System.Windows.Forms.ComboBox();
             this.amountTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labTotal = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // sourceCurrency
+            // labFrom
             // 
-            this.sourceCurrency.AutoSize = true;
-            this.sourceCurrency.BackColor = System.Drawing.Color.Transparent;
-            this.sourceCurrency.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sourceCurrency.ForeColor = System.Drawing.Color.Black;
-            this.sourceCurrency.Location = new System.Drawing.Point(125, 110);
-            this.sourceCurrency.Name = "sourceCurrency";
-            this.sourceCurrency.Size = new System.Drawing.Size(51, 23);
-            this.sourceCurrency.TabIndex = 0;
-            this.sourceCurrency.Text = "From";
+            this.labFrom.AutoSize = true;
+            this.labFrom.BackColor = System.Drawing.Color.Transparent;
+            this.labFrom.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labFrom.ForeColor = System.Drawing.Color.Black;
+            this.labFrom.Location = new System.Drawing.Point(125, 110);
+            this.labFrom.Name = "labFrom";
+            this.labFrom.Size = new System.Drawing.Size(51, 23);
+            this.labFrom.TabIndex = 0;
+            this.labFrom.Text = "From";
             // 
-            // label1
+            // labTo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(125, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "To";
+            this.labTo.AutoSize = true;
+            this.labTo.BackColor = System.Drawing.Color.Transparent;
+            this.labTo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTo.ForeColor = System.Drawing.Color.Black;
+            this.labTo.Location = new System.Drawing.Point(125, 150);
+            this.labTo.Name = "labTo";
+            this.labTo.Size = new System.Drawing.Size(27, 23);
+            this.labTo.TabIndex = 1;
+            this.labTo.Text = "To";
             // 
-            // label2
+            // labAmount
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(125, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Amount";
+            this.labAmount.AutoSize = true;
+            this.labAmount.BackColor = System.Drawing.Color.Transparent;
+            this.labAmount.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAmount.ForeColor = System.Drawing.Color.Black;
+            this.labAmount.Location = new System.Drawing.Point(125, 190);
+            this.labAmount.Name = "labAmount";
+            this.labAmount.Size = new System.Drawing.Size(72, 23);
+            this.labAmount.TabIndex = 2;
+            this.labAmount.Text = "Amount";
             // 
             // sourceCurrencyComboBox
             // 
@@ -82,6 +82,8 @@
             this.sourceCurrencyComboBox.Name = "sourceCurrencyComboBox";
             this.sourceCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
             this.sourceCurrencyComboBox.TabIndex = 3;
+            this.sourceCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
+            this.sourceCurrencyComboBox.TextChanged += HandleCurrencyComboBoxesPopulation;
             // 
             // destinationCurrencyComboBox
             // 
@@ -90,6 +92,8 @@
             this.destinationCurrencyComboBox.Name = "destinationCurrencyComboBox";
             this.destinationCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
             this.destinationCurrencyComboBox.TabIndex = 4;
+            this.destinationCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
+            this.destinationCurrencyComboBox.TextChanged += HandleCurrencyComboBoxesPopulation;
             // 
             // amountTextBox
             // 
@@ -98,17 +102,17 @@
             this.amountTextBox.Size = new System.Drawing.Size(121, 20);
             this.amountTextBox.TabIndex = 5;
             // 
-            // label3
+            // labTotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(125, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 23);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Total :";
+            this.labTotal.AutoSize = true;
+            this.labTotal.BackColor = System.Drawing.Color.Transparent;
+            this.labTotal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTotal.ForeColor = System.Drawing.Color.Black;
+            this.labTotal.Location = new System.Drawing.Point(125, 240);
+            this.labTotal.Name = "labTotal";
+            this.labTotal.Size = new System.Drawing.Size(55, 23);
+            this.labTotal.TabIndex = 6;
+            this.labTotal.Text = "Total :";
             // 
             // btnConvert
             // 
@@ -129,13 +133,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(529, 371);
             this.Controls.Add(this.btnConvert);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labTotal);
             this.Controls.Add(this.amountTextBox);
             this.Controls.Add(this.destinationCurrencyComboBox);
             this.Controls.Add(this.sourceCurrencyComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.sourceCurrency);
+            this.Controls.Add(this.labAmount);
+            this.Controls.Add(this.labTo);
+            this.Controls.Add(this.labFrom);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CurrencyConverter";
@@ -148,13 +152,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label sourceCurrency;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labFrom;
+        private System.Windows.Forms.Label labTo;
+        private System.Windows.Forms.Label labAmount;
         private System.Windows.Forms.ComboBox sourceCurrencyComboBox;
         private System.Windows.Forms.ComboBox destinationCurrencyComboBox;
         private System.Windows.Forms.TextBox amountTextBox;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labTotal;
         private System.Windows.Forms.Button btnConvert;
     }
 }

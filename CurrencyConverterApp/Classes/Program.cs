@@ -1,5 +1,8 @@
-﻿using System;
+﻿using CurrencyAppConverter.Classes;
+using CurrencyConverterApp;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +19,11 @@ namespace CurrencyAppConverter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CurrencyConverter());
+
+            string apiKey = File.ReadAllText("api.txt");
+            var apiService = new ApiService();
+
+            Application.Run(new CurrencyConverter(apiService, apiKey));
         }
     }
 }
