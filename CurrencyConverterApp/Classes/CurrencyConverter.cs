@@ -21,6 +21,13 @@ namespace CurrencyConverterApp
             this.apiKey = apiKey;
             this.apiService = apiService;
             currencies = new Dictionary<string, double>();
+
+            FormClosing += DisposeHttpClient;
+        }
+
+        private void DisposeHttpClient(object sender, EventArgs e)
+        {
+            apiService.DisposeHttpClient();
         }
 
         private void HandleConvertButtonClick(object sender, EventArgs e)

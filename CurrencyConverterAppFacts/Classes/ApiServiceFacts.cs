@@ -1,4 +1,4 @@
-using CurrencyAppConverter.Classes;
+﻿using CurrencyAppConverter.Classes;
 using Moq;
 using Moq.Protected;
 using System.Net;

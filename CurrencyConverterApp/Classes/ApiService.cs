@@ -16,14 +16,9 @@ namespace CurrencyAppConverter.Classes
             httpClient = new HttpClient();
         }
 
-        public ApiService(HttpClient client)
+        public ApiService(HttpClient httpClient)
         {
-            httpClient = client;
-        }
-
-        public void DisposeClient()
-        {
-            httpClient.Dispose();
+            this.httpClient = httpClient;
         }
 
         private static void AddCurrencies(dynamic deserializedApiResponse, Dictionary<string, double> currencies)
@@ -49,6 +44,11 @@ namespace CurrencyAppConverter.Classes
             {
                 throw new ArgumentException(ex.Message, nameof(response));
             }
+        }
+
+        public void DisposeHttpClient()
+        {
+            httpClient.Dispose();
         }
 
         public async Task<string> GetCurrenciesDataAsync(string apiKey)

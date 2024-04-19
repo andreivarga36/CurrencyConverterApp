@@ -9,6 +9,6 @@ namespace CurrencyAppConverter.Interfaces
 
         Dictionary<string, double> DeserializeCurrencies(string response);
 
-        void DisposeClient();
+        void DisposeHttpClient();
     }
 }

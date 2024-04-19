@@ -1,7 +1,10 @@
 ﻿using CurrencyAppConverter.Classes;
+using CurrencyAppConverter.Interfaces;
 using CurrencyConverterApp;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace CurrencyAppConverter
