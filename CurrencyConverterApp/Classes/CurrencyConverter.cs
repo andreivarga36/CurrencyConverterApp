@@ -23,6 +23,30 @@ namespace CurrencyConverterApp
             currencies = new Dictionary<string, double>();
         }
 
+        private double CalculateConvertedAmount(double amount, string sourceCurrency, string destinationCurrency)
+        {
+            var sourceCurrencyExchangeRate = currencies.First(c => c.Key == sourceCurrency).Value;
+            var destinationCurrencyExchangeRate = currencies.First(c => c.Key == destinationCurrency).Value;
+
+            return amount * (destinationCurrencyExchangeRate / sourceCurrencyExchangeRate);
+        }
+
+        private void DisplayConvertedAmount(double convertedAmount)
+        {
+            labTotal.Text = $"Total: {convertedAmount,10:0.00}";
+        }
+
+        private void CalculateAndDisplayConvertedAmount()
+        {
+            var sourceCurrency = sourceCurrencyComboBox.Text;
+            var destinationCurrency = destinationCurrencyComboBox.Text;
+            var amount = double.Parse(amountTextBox.Text);
+
+            var convertedAmount = CalculateConvertedAmount(amount, sourceCurrency, destinationCurrency);
+
+            DisplayConvertedAmount(convertedAmount);
+        }
+
         private async Task RetrieveCurrencyRates()
         {
             try
