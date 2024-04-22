@@ -187,5 +187,26 @@ namespace CurrencyConverterAppFacts.Classes
 
             await Assert.ThrowsAsync<InvalidOperationException>(() => apiService.GetCurrenciesDataAsync(apiKey));
         }
+
+        [Fact]
+        public async void DisposeHttpClient_HttpClientIsDisposed_ShoudThrowException()
+        {
+            string apiKey = "validApiKey";
+
+            var mockHttpHandler = new Mock<HttpMessageHandler>();
+            mockHttpHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
+                .ReturnsAsync(new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.OK,
+                });
+
+            var httpClient = new HttpClient(mockHttpHandler.Object);
+
+            apiService = new ApiService(httpClient);
+            apiService.DisposeHttpClient();
+
+            await Assert.ThrowsAsync<ObjectDisposedException>(() => apiService.GetCurrenciesDataAsync(apiKey));
+        }
     }
 }
