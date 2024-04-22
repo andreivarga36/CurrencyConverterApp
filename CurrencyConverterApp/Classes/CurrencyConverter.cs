@@ -32,6 +32,8 @@ namespace CurrencyConverterApp
 
         private void HandleConvertButtonClick(object sender, EventArgs e)
         {
+            ClearAmount();
+
             try
             {
                 if (ValidateUserInput())
@@ -62,6 +64,11 @@ namespace CurrencyConverterApp
             var convertedAmount = CalculateConvertedAmount(amount, sourceCurrency, destinationCurrency);
 
             DisplayConvertedAmount(convertedAmount);
+        }
+
+        private void ClearAmount()
+        {
+            labTotal.Text = "Total:";
         }
 
         private void DisplayConvertedAmount(double convertedAmount)
