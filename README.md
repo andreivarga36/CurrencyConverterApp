@@ -15,6 +15,8 @@ Usage Instructions
 
     The application retrieves real-time currency exchange rates from the CurrencyAPI, so an active internet connection is required for accurate conversions.
 
+    Users can also manually input currencies in uppercase.
+
 ### Technologies and Tools Used
 
     - C#: The primary programming language for developing the application.
