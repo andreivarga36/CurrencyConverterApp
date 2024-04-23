@@ -28,10 +28,13 @@ Usage Instructions
     - Windows Forms: The GUI library used for creating the user interface.
 
     - System.Threading.Tasks: A namespace used for working with asynchronous tasks.
+    
+    - Code Analyzers: Microsoft.CodeAnalysis.NetAnalyzers, Roslynator.Analyzers, SonarAnalyzer.CSharp
+
 
 #### Screenshots
 
 ##### Documentation
 
-  - CurrencyAPI Documentation
-  - Asynchronous Programming in C#
+  - [CurrencyAPI Documentation](https://currencyapi.com/)
+  - [Asynchronous Programing in C#](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/)
