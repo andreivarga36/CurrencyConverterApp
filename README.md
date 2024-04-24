@@ -33,3 +33,7 @@ Currency Converter is a simple desktop application designed to convert currencie
  - System.Threading.Tasks: A namespace used for working with asynchronous tasks.
 
  - XUnit: A testing framework for .NET used to create unit tests.
+
+##### Screenshots
+
+ -[Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
