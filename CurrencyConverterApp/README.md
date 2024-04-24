@@ -40,17 +40,17 @@ Usage Instructions
 
    - ![Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
      
-   - !["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
+   - !["From" box is empty](Screenshots/emptyFromBox.jpg)
 
-   - ![Currency in "From" box is invalid](ScreenShots/invalidCurrencyInFromBox.jpg)
+   - ![Currency in "From" box is invalid](ScreenShots/invalidFromBox.jpg)
 
-   - !["To" box is empty](Screenshots\toBoxIsEmpty.jpg)
+   - !["To" box is empty](Screenshots\emptyToBox.jpg)
 
-   - ![Currency in "To" box is invalid](Screenshots\invalidCurrencyInToBox)
+   - ![Currency in "To" box is invalid](Screenshots\invalidToBox)
 
-   - ![Amount box is empty](amountBoxIsEmpty)
+   - ![Amount box is empty](emptyAmountBox)
 
-   - ![Invalid amount](Screenshots\invalidAmount)
+   - ![Invalid amount](Screenshots\invalidAmountBox)
 
 ##### Documentation
 
