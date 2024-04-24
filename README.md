@@ -38,19 +38,19 @@ Usage Instructions
 
 #### Screenshots
 
-   - [Conversion from EUR to RON](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\fromEurToRon)
+   - [Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
      
-   - ["From" box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\fromBoxIsEmpty)
+   - ["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
 
-   - [Currency in "From" box is invalid](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidCurrencyInFromBox)
+   - [Currency in "From" box is invalid](ScreenShots/invalidCurrencyInFromBox.jpg)
 
-   - ["To" box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\toBoxIsEmpty)
+   - ["To" box is empty](Screenshots\toBoxIsEmpty.jpg)
 
-   - [Currency in "To" box is invalid](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidCurrencyInToBox)
+   - [Currency in "To" box is invalid](Screenshots\invalidCurrencyInToBox)
 
-   - [Amount box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\amountBoxIsEmpty)
+   - [Amount box is empty](amountBoxIsEmpty)
 
-   - [Invalid amount](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidAmount)
+   - [Invalid amount](Screenshots\invalidAmount)
 
 ##### Documentation
 
