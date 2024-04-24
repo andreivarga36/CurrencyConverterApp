@@ -36,16 +36,16 @@ Currency Converter is a simple desktop application designed to convert currencie
 
 ##### Screenshots
 
- -[Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
+ - [Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
 
- -[Invalid Currency in "From" box](Screenshots/invalidFromBox.jpg)
+ - [Invalid Currency in "From" box](Screenshots/invalidFromBox.jpg)
 
- -["From" box is empty](Screenshots/emptyFromBox.jpg)
+ - ["From" box is empty](Screenshots/emptyFromBox.jpg)
 
- -[Invalid Currency in "To" box](Screenshots/invalidToBox.jpg)
+ - [Invalid Currency in "To" box](Screenshots/invalidToBox.jpg)
 
- -["To" box is empty](Screenshots/emptyToBox.jpg)
+ - ["To" box is empty](Screenshots/emptyToBox.jpg)
 
- -[Amount box is invalid](Screenshots/invalidAmountBox.jpg)
+ - [Amount box is invalid](Screenshots/invalidAmountBox.jpg)
 
  - [Amount box is empty](Screenshots/emptyAmountBox.jpg)
