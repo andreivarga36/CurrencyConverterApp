@@ -137,8 +137,6 @@
     <Analyzer Include="packages\SonarAnalyzer.CSharp.9.23.2.88755\analyzers\SonarAnalyzer.CSharp.dll" />
     <Analyzer Include="packages\SonarAnalyzer.CSharp.9.23.2.88755\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screenshots\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
