@@ -38,7 +38,7 @@ Usage Instructions
 
 #### Screenshots
 
-   - [Conversion from EUR to RON](Screenshots/amountBoxIsEmpty.jpg)
+   - [Conversion from EUR to RON](Classes/amountBoxIsEmpty.jpg)
      
    - ["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
 
