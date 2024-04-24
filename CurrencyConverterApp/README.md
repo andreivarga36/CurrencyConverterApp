@@ -38,19 +38,19 @@ Usage Instructions
 
 #### Screenshots
 
-   - [Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
+   - ![Conversion from EUR to RON](Screenshots/fromEurToRon.jpg)
      
-   - ["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
+   - !["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
 
-   - [Currency in "From" box is invalid](ScreenShots/invalidCurrencyInFromBox.jpg)
+   - ![Currency in "From" box is invalid](ScreenShots/invalidCurrencyInFromBox.jpg)
 
-   - ["To" box is empty](Screenshots\toBoxIsEmpty.jpg)
+   - !["To" box is empty](Screenshots\toBoxIsEmpty.jpg)
 
-   - [Currency in "To" box is invalid](Screenshots\invalidCurrencyInToBox)
+   - ![Currency in "To" box is invalid](Screenshots\invalidCurrencyInToBox)
 
-   - [Amount box is empty](amountBoxIsEmpty)
+   - ![Amount box is empty](amountBoxIsEmpty)
 
-   - [Invalid amount](Screenshots\invalidAmount)
+   - ![Invalid amount](Screenshots\invalidAmount)
 
 ##### Documentation
 
