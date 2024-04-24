@@ -1,6 +1,6 @@
 # Currency Converter
 
-Currency Converter is a simple desktop application designed to convert currencies using real-time exchange rates. It utilizes the CurrencyAPI to fetch the latest currency conversion rates and provides a user-friendly interface for currency conversion.
+    Currency Converter is a simple desktop application designed to convert currencies using real-time exchange rates. It utilizes the CurrencyAPI to fetch the latest currency conversion rates and provides a user-friendly interface for currency conversion.
 
 Usage Instructions:
 
@@ -12,13 +12,13 @@ Usage Instructions:
 
     - Click Convert: Press the "Convert" button to calculate and display the converted amount.
 
-## Note
+## Note:
 
     - The application retrieves real-time currency exchange rates from the CurrencyAPI, so an active internet connection is required for accurate conversions.
 
     - Users can also manually input currencies in uppercase.
 
-### Technologies and Tools Used
+### Technologies and Tools Used:
 
     - C#: The primary programming language for developing the application.
 
