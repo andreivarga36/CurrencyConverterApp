@@ -4,13 +4,13 @@ Currency Converter is a simple desktop application designed to convert currencie
 
 Usage Instructions:
 
-    - Select Source Currency: Choose the currency you want to convert from in the "From" dropdown menu.
+ Select Source Currency: Choose the currency you want to convert from in the "From" dropdown menu.
 
-    - Select Destination Currency: Choose the currency you want to convert to in the "To" dropdown menu.
+ Select Destination Currency: Choose the currency you want to convert to in the "To" dropdown menu.
 
-    - Enter Amount: Input the amount you wish to convert in the designated text field.
+ Enter Amount: Input the amount you wish to convert in the designated text field.
 
-    - Click Convert: Press the "Convert" button to calculate and display the converted amount.
+ Click Convert: Press the "Convert" button to calculate and display the converted amount.
 
 ## Note:
 
