@@ -49,3 +49,8 @@ Currency Converter is a simple desktop application designed to convert currencie
  - [Amount box is invalid](Screenshots/invalidAmountBox.jpg)
 
  - [Amount box is empty](Screenshots/emptyAmountBox.jpg)
+
+##### Documentation
+
+ - [CurrencyApi Documentation](https://currencyapi.com/)
+ - [Asynchronous Programming in C#](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/)
