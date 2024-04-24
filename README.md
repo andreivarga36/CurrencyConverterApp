@@ -41,3 +41,11 @@ Currency Converter is a simple desktop application designed to convert currencie
  -[Invalid Currency in "From" box](Screenshots/invalidFromBox.jpg)
 
  -["From" box is empty](Screenshots/emptyFromBox.jpg)
+
+ -[Invalid Currency in "To" box](Screenshots/invalidToBox.jpg)
+
+ -["To" box is empty](Screenshots/emptyToBox.jpg)
+
+ -[Amount box is invalid](Screenshots/invalidAmountBox.jpg)
+
+ - [Amount box is empty](Screenshots/emptyAmountBox.jpg)
