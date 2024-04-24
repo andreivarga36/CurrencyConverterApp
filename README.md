@@ -38,6 +38,20 @@ Usage Instructions
 
 #### Screenshots
 
+   - [Conversion from EUR to RON](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\fromEurToRon)
+     
+   - ["From" box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\fromBoxIsEmpty)
+
+   - [Currency in "From" box is invalid](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidCurrencyInFromBox)
+
+   - ["To" box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\toBoxIsEmpty)
+
+   - [Currency in "To" box is invalid](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidCurrencyInToBox)
+
+   - [Amount box is empty](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\amountBoxIsEmpty)
+
+   - [Invalid amount](E:\My Workplace\CurrencyConverterApp\CurrencyConverterApp\Screenshots\invalidAmount)
+
 ##### Documentation
 
   - [CurrencyAPI Documentation](https://currencyapi.com/)
