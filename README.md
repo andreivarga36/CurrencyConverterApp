@@ -38,7 +38,7 @@ Usage Instructions
 
 #### Screenshots
 
-   - [Conversion from EUR to RON](CurrencyAppConverter/Screenshots/fromEurToRon.jpg)
+   - [Conversion from EUR to RON](Screenshots/amountBoxIsEmpty.jpg)
      
    - ["From" box is empty](Screenshots/fromBoxIsEmpty.jpg)
 
