@@ -52,5 +52,5 @@ Currency Converter is a simple desktop application designed to convert currencie
 
 ##### Documentation
 
- - [CurrencyApi Documentation](https://currencyapi.com/)
+ - [CurrencyApi Documentation](https://currencyapi.com/docs)
  - [Asynchronous Programming in C#](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/)
