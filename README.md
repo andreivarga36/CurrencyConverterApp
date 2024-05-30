@@ -38,7 +38,7 @@ Currency Converter is a simple desktop application designed to convert currencie
 
  - ![Conversion from EUR to RON](CurrencyConverterApp/Screenshots/fromEurToRon.jpg)
 
- - ![Invalid Currency in "From" box](CurrencyConverterApp/Screenshots/invalidFromBox.jpg)
+ - ![Invalid Currency in "From" box](CurrencyConverterApp/Screenshots/emptyFromBox.jpg)
 
    For more screenshots, please visit [Screenshots](https://github.com/andreivarga36/CurrencyConverterApp/tree/master/CurrencyConverterApp/Screenshots)
 
