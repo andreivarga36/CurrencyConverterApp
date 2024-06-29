@@ -36,10 +36,7 @@ namespace CurrencyConverterApp
 
             try
             {
-                if (ValidateUserInput())
-                {
-                    CalculateAndDisplayConvertedAmount();
-                }
+                 CalculateAndDisplayConvertedAmount();
             }
             catch (Exception ex)
             {
@@ -111,37 +108,17 @@ namespace CurrencyConverterApp
             }
         }
 
-        private bool ValidateUserInput() => ValidateSourceCurrency() && ValidateDestinationCurrency() && ValidateAmount();
-
-
-        private bool ValidateSourceCurrency()
+        private void AmountTextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (currencies.ContainsKey(sourceCurrencyComboBox.Text))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
-                return true;
+                e.Handled = true;
             }
 
-            throw new InvalidOperationException("Please type a valid currency in \"From\" box!");
-        }
-
-        private bool ValidateDestinationCurrency()
-        {
-            if (currencies.ContainsKey(destinationCurrencyComboBox.Text))
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
             {
-                return true;
+                e.Handled = true;
             }
-
-            throw new InvalidOperationException("Please type a valid currency in \"To\" box!");
-        }
-
-        private bool ValidateAmount()
-        {
-            if (double.TryParse(amountTextBox.Text, out _))
-            {
-                return true;
-            }
-
-            throw new InvalidOperationException("Please enter a valid amount!");
         }
     }
 }

@@ -77,30 +77,31 @@
             // 
             // sourceCurrencyComboBox
             // 
+            this.sourceCurrencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sourceCurrencyComboBox.FormattingEnabled = true;
             this.sourceCurrencyComboBox.Location = new System.Drawing.Point(221, 110);
             this.sourceCurrencyComboBox.Name = "sourceCurrencyComboBox";
             this.sourceCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
-            this.sourceCurrencyComboBox.TabIndex = 3;
+            this.sourceCurrencyComboBox.TabIndex = 1;
             this.sourceCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
-            this.sourceCurrencyComboBox.TextChanged += HandleCurrencyComboBoxesPopulation;
             // 
             // destinationCurrencyComboBox
             // 
+            this.destinationCurrencyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.destinationCurrencyComboBox.FormattingEnabled = true;
             this.destinationCurrencyComboBox.Location = new System.Drawing.Point(221, 150);
             this.destinationCurrencyComboBox.Name = "destinationCurrencyComboBox";
             this.destinationCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
-            this.destinationCurrencyComboBox.TabIndex = 4;
+            this.destinationCurrencyComboBox.TabIndex = 2;
             this.destinationCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
-            this.destinationCurrencyComboBox.TextChanged += HandleCurrencyComboBoxesPopulation;
             // 
             // amountTextBox
             // 
             this.amountTextBox.Location = new System.Drawing.Point(221, 190);
             this.amountTextBox.Name = "amountTextBox";
             this.amountTextBox.Size = new System.Drawing.Size(121, 20);
-            this.amountTextBox.TabIndex = 5;
+            this.amountTextBox.TabIndex = 3;
+            this.amountTextBox.KeyPress += AmountTextBoxKeyPress;
             // 
             // labTotal
             // 
@@ -121,7 +122,7 @@
             this.btnConvert.Location = new System.Drawing.Point(370, 150);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(88, 45);
-            this.btnConvert.TabIndex = 7;
+            this.btnConvert.TabIndex = 4;
             this.btnConvert.Text = "Convert";
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.HandleConvertButtonClick);
