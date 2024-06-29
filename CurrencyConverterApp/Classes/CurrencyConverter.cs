@@ -36,7 +36,10 @@ namespace CurrencyConverterApp
 
             try
             {
-                 CalculateAndDisplayConvertedAmount();
+                if (IsValidAmount())
+                {
+                    CalculateAndDisplayConvertedAmount();
+                }
             }
             catch (Exception ex)
             {
@@ -106,6 +109,19 @@ namespace CurrencyConverterApp
                 await PopulateCurrencyComboBoxesAsync();
                 currenciesPopulated = true;
             }
+
+            if (CurrenciesAreSelected() && IsValidAmount())
+            {
+                CalculateAndDisplayConvertedAmount();
+            }
+        }
+
+        private void ComboBoxSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CurrenciesAreSelected() && IsValidAmount())
+            {
+                CalculateAndDisplayConvertedAmount();
+            }
         }
 
         private void AmountTextBoxKeyPress(object sender, KeyPressEventArgs e)
@@ -119,6 +135,32 @@ namespace CurrencyConverterApp
             {
                 e.Handled = true;
             }
+        }
+
+        private void AmountTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (CurrenciesAreSelected() && IsValidAmount() && e.KeyCode == Keys.Enter)
+            {
+                CalculateAndDisplayConvertedAmount();
+            }
+        }
+
+        private void AmountTextBoxLeave(object sender, EventArgs e)
+        {
+            if (CurrenciesAreSelected() && IsValidAmount())
+            {
+                CalculateAndDisplayConvertedAmount();
+            }
+        }
+
+        private bool CurrenciesAreSelected()
+        {
+            return sourceCurrencyComboBox.SelectedIndex != -1 && destinationCurrencyComboBox.SelectedIndex != -1;
+        }
+
+        private bool IsValidAmount()
+        {
+            return double.TryParse(amountTextBox.Text, out double _);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace CurrencyConverterApp
+﻿using System;
+
+namespace CurrencyConverterApp
 {
     partial class CurrencyConverter
     {
@@ -84,6 +86,7 @@
             this.sourceCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
             this.sourceCurrencyComboBox.TabIndex = 1;
             this.sourceCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
+            this.sourceCurrencyComboBox.SelectedIndexChanged += ComboBoxSelectedIndexChanged;
             // 
             // destinationCurrencyComboBox
             // 
@@ -94,6 +97,7 @@
             this.destinationCurrencyComboBox.Size = new System.Drawing.Size(121, 21);
             this.destinationCurrencyComboBox.TabIndex = 2;
             this.destinationCurrencyComboBox.DropDown += HandleCurrencyComboBoxesPopulation;
+            this.destinationCurrencyComboBox.SelectedIndexChanged += ComboBoxSelectedIndexChanged;
             // 
             // amountTextBox
             // 
@@ -102,6 +106,8 @@
             this.amountTextBox.Size = new System.Drawing.Size(121, 20);
             this.amountTextBox.TabIndex = 3;
             this.amountTextBox.KeyPress += AmountTextBoxKeyPress;
+            this.amountTextBox.Leave += AmountTextBoxLeave;
+            this.amountTextBox.KeyDown += AmountTextBoxKeyDown;
             // 
             // labTotal
             // 
